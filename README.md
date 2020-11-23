@@ -1,41 +1,42 @@
 # ALG.PROJECT-Uclubbing
 This is a repository where we will work in the Uclubbing MVP.
-from random import randrange, uniform
+      
+    from random import randrange, uniform
 
 
-clubs_availables = {
-    # Name_of_the_club : [#number of tables , #Price of one table,#club capacity(for tables),#grade by user]
-    "1: Barcelo       ": [15, 120, 90],
-    "2: Irish         ": [1, 30, 42],
-    "3: Black_house   ": [17, 130, 102],
-    "4: Fabrik        ": [10, 110, 60],
-    "5: Goya          ": [13, 115, 78],
-    "6: Theato_kapital": [20, 180, 120]
-}
+    clubs_availables = {
+        # Name_of_the_club : [#number of tables , #Price of one table,#club capacity(for tables),#grade by user]
+        "1: Barcelo       ": [15, 120, 90],
+        "2: Irish         ": [1, 30, 42],
+        "3: Black_house   ": [17, 130, 102],
+        "4: Fabrik        ": [10, 110, 60],
+        "5: Goya          ": [13, 115, 78],
+        "6: Theato_kapital": [20, 180, 120]
+        }
 
-clubs_guide = {
-    1: "1: Barcelo       ",
-    2: "2: Irish         ",
-    3: "3: Black_house   ",
-    4: "4: Fabrik        ",
-    5: "5: Goya          ",
-    6: "6: Theato_kapital"
-}
+    clubs_guide = {
+        1: "1: Barcelo       ",
+        2: "2: Irish         ",
+        3: "3: Black_house   ",
+        4: "4: Fabrik        ",
+        5: "5: Goya          ",
+        6: "6: Theato_kapital"
+    }
 
-def main():
-    try:
-        for clubs in clubs_availables:
-            if clubs == "1: Barcelo       " or clubs ==  "6: Theato_kapital" or clubs ==  "3: Black_house   ":
-                grade = [randrange(4,5) for p in range(0, 3)]
-                average_grade = round(sum(grade)/len(grade),1)
-            elif clubs == "2: Irish         ":
-                grade = [randrange(1,2) for p in range(0, 3)]
-                average_grade = round(sum(grade)/len(grade),1)
-            else:
-                grade = [randrange(2,4) for p in range(0, 3)]
-                average_grade = round(sum(grade)/len(grade),1)
-            clubs_availables[clubs].append(average_grade)
-                #print(clubs_availables[clubs][-1])#shows the grade of each club
+    def main():
+        try:
+            for clubs in clubs_availables:
+                if clubs == "1: Barcelo       " or clubs ==  "6: Theato_kapital" or clubs ==  "3: Black_house   ":
+                    grade = [randrange(4,5) for p in range(0, 3)]
+                    average_grade = round(sum(grade)/len(grade),1)
+                elif clubs == "2: Irish         ":
+                    grade = [randrange(1,2) for p in range(0, 3)]
+                    average_grade = round(sum(grade)/len(grade),1)
+                else:
+                    grade = [randrange(2,4) for p in range(0, 3)]
+                    average_grade = round(sum(grade)/len(grade),1)
+                clubs_availables[clubs].append(average_grade)
+                    #print(clubs_availables[clubs][-1])#shows the grade of each club
 
         print("Welcome to Ucclub , we will need you to provide some information for us in order to help you")
         name = input("Name :\n>> ")
